@@ -80,3 +80,20 @@ void print_env(char **envp)
 		i++;
 	}
 }
+
+/**
+ * free_function - function to free pointer to pointer
+ * @double_point: pointer to pointer
+ *
+ */
+
+void free_function(char **double_point)
+{
+	char **tmp = double_point;
+
+	if (!double_point)
+		return;
+	while (*double_point)
+		free(*double_point++);
+	free(tmp);
+}
