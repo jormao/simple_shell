@@ -62,3 +62,21 @@ int _strcmp(char *s1, char *s2)
 	}
 	return (m);
 }
+
+/**
+ * print_env - function for found the PATH
+ * @envp: pointer with the enviroment
+ *
+ */
+
+void print_env(char **envp)
+{
+	int i = 0;
+
+	while (envp[i])
+	{
+		write(STDOUT_FILENO, envp[i], _strlen(envp[i]));
+		write(STDOUT_FILENO, "\n", 1);
+		i++;
+	}
+}
