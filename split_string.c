@@ -138,3 +138,39 @@ int _atoi(char *s)
 	result = result * negat;
 	return (result);
 }
+
+/**
+ * exit_function - function to use exit in the shell
+ * @array_words: string with tokens
+ * @buffer: buffer from the getline
+ *
+ * Return: 2 if the argument of exit is error
+ */
+
+int exit_function(char **array_words, char *buffer)
+{
+	int arg_exit = 0, len_exit = 0, flag = 0;
+
+	if (array_words[1] == NULL || (!_strcmp(array_words[1], "0")))
+	{
+		free_function(array_words);
+		free(buffer);
+		exit(0);
+	}
+	arg_exit = _atoi(array_words[1]);
+	if (arg_exit > 0 && arg_exit <= 255)
+	{
+		free_function(array_words);
+		free(buffer);
+		exit(arg_exit);
+	}
+	else
+	{
+		len_exit = _strlen(array_words[1]);
+		write(STDOUT_FILENO, "exit: Illegal number: ", 22);
+		write(STDOUT_FILENO, array_words[1], len_exit);
+		write(STDOUT_FILENO, "\n", 1);
+		flag = 2;
+	}
+	return (flag);
+}
