@@ -74,6 +74,13 @@ char **split_string(char *str, char *delim)
 	return (words);
 }
 
+/**
+ * index_function - test the array and choose the correct function to use
+ * @buffer: string with commands send by console
+ * @envp: enviroment
+ *
+ */
+
 void index_function(char *buffer, char **envp)
 {
 	int flag = 0;
