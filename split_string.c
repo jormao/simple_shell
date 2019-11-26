@@ -73,3 +73,28 @@ char **split_string(char *str, char *delim)
 	free(buffer);
 	return (words);
 }
+
+void index_function(char *buffer, char **envp)
+{
+	int flag = 0;
+	char **array_words, *e_path = NULL;
+	struct stat find_command;
+
+	e_path = found_path(envp);
+	array_words = split_string(buffer, " ");
+	if (!(_strcmp(array_words[0], "exit")))
+		flag = exit_function(array_words, buffer);
+	else if (array_words[0] == NULL)
+		perror("./hsh");
+	else if (!(_strcmp(array_words[0], "env")))
+		print_env(envp);
+	else if (stat(array_words[0], &find_command) == 0)
+		flag = 1;
+	else
+		flag = check_in_path(array_words, e_path);
+	if (flag == 1)
+		_fork(array_words, envp);
+	if (flag == 0)
+		perror("./hsh");
+	free_function(array_words);
+}
