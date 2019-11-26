@@ -22,7 +22,9 @@ In addition to commands, shells offer other elements to improve their functional
 
 how to use it
 
-The command is a sequence of words or tokens separated by delimiters. The first word specifies the name 
+The command is a sequence of words or tokens
+separated by delimiters. The first word
+specifies the name
 of the command to be executed. The remaining words are passed as arguments to the summoned command.
 The command name is passed as an argument.
 

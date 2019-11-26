@@ -23,7 +23,7 @@ Command to end the function and return the value provided to the call section of
 
 .B Commands
 
-The command is a sequence of words or tokens separated by delimiters. The first word specifies the name 
+The command is a sequence of words or tokens separated by delimiters. The first word specifies the name
 of the command to be executed. The remaining words are passed as arguments to the summoned command.
 The command name is passed as an argument.
 
@@ -102,7 +102,7 @@ The mode consists of 3 parts. owner, groups, and others this refers to the permi
 
 .SH EXAMPLE
 chmod a=rwx file.txt
-Assign all permissions to all users for the file file.txt. 
+Assign all permissions to all users for the file file.txt.
 
 .B Command cat
 Displays the contents of a file on the screen without limits.
@@ -152,20 +152,20 @@ $HOME/.profile
 
 .SH Errors
 Errors detected by the shell, such as syntax errors or fatal errors in special commands, cause the shell to return a non zero exit status.
-If the shell is being used non interactively then execution of the shell file is abandoned. Otherwise, the shell returns 
+If the shell is being used non interactively then execution of the shell file is abandoned. Otherwise, the shell returns
 the exit status of the last command executed.
 
 
 
-.SH BUGS 
+.SH BUGS
 
 No known bugs.
 
 
-.SH SEE ALSO 
+.SH SEE ALSO
 
 shell, bash.
 
 
 .SH AUTHOR
-Julian Catañeda, Jorge Salazar. 
+Julian Catañeda 1277@holbertonschool.com, Jorge Salazar jormao@gmail.com.
