@@ -106,7 +106,6 @@ void index_function(char *buffer, char **envp)
 	free_function(array_words);
 }
 
-
 /**
  * _atoi - convert string to int
  *@s: string to convert
