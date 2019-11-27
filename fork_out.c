@@ -59,7 +59,7 @@ int check_in_path(char **arr_words, char *e_path)
 		if (stat(cat_words[idx], &find_command) == 0)
 		{
 			arr_words[0] = _realloc(arr_words[0], (len_arr + 1), new_size);
-			if(!arr_words[0])
+			if (!arr_words[0])
 				return (0);
 			_strcpy(arr_words[0], cat_words[idx]);
 			flag = 1;
