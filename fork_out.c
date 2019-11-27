@@ -17,20 +17,13 @@ int _fork(char **arr, char **envp)
 	{
 		case -1:
 			perror("Error");
-			exit(-1);
-			break;
+			return (-1);
 		case 0:
-			if (execve(arr[0], arr, envp) == -1)
-			{
-				perror("Error");
-				return (0);
-			}
-			break;
+			execve(arr[0], arr, envp);
 		default:
 			do
 				waitpid(pid, &status, WUNTRACED);
 			while (WIFEXITED(status) == 0 && WIFSIGNALED(status) == 0);
-			break;
 	}
 return (0);
 }
@@ -59,11 +52,15 @@ int check_in_path(char **arr_words, char *e_path)
 		new_size = (sizeof(char) * (len_tok + len_arr));
 		old_size = (_strlen(cat_words[idx]) + 1);
 		cat_words[idx] = _realloc(cat_words[idx], old_size, new_size);
+		if (!cat_words)
+			return (0);
 		_strcat(cat_words[idx], "/");
 		_strcat(cat_words[idx], arr_words[0]);
 		if (stat(cat_words[idx], &find_command) == 0)
 		{
 			arr_words[0] = _realloc(arr_words[0], (len_arr + 1), new_size);
+			if(!arr_words[0])
+				return (0);
 			_strcpy(arr_words[0], cat_words[idx]);
 			flag = 1;
 			break;
