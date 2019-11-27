@@ -96,7 +96,7 @@ void index_function(char *buffer, char **envp)
 		flag = exit_function(array_words, buffer);
 	else if (!(_strcmp(array_words[0], "env")))
 		print_env(envp);
-	if (array_words[0][0] != '/')
+	if (array_words[0][0] != '/' && flag == 0)
 		flag = check_in_path(array_words, e_path);
 	if (flag == 0)
 	{
