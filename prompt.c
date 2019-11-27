@@ -13,12 +13,12 @@ int main(int argc, char **argv, char **envp)
 {
 	char *buffer = NULL;
 	size_t buffer_size = 0;
-	ssize_t prints = 1;
+	ssize_t prints = 0;
 
 	(void)argc;
 	(void)argv;
 
-	while (prints > 0)
+	while (prints >= 0)
 	{
 		signal(SIGINT, sig_handler);
 		if (isatty(STDIN_FILENO))
