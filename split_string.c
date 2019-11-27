@@ -96,12 +96,25 @@ void index_function(char *buffer, char **envp)
 		perror("./hsh");
 	else if (!(_strcmp(array_words[0], "env")))
 		print_env(envp);
-	else if (stat(array_words[0], &find_command) == 0)
-		flag = 1;
-	else
+	if (array_words[0][0] != '/')
+	{
 		flag = check_in_path(array_words, e_path);
+	}
+	if (flag == 0)
+	{
+		if (stat(array_words[0], &find_command) == 0)
+		{
+			flag = 1;
+		}
+	}
 	if (flag == 1)
-		_fork(array_words, envp);
+	{
+		if (access(array_words[0], X_OK) == 0)
+			_fork(array_words, envp);
+		else
+			perror("./hsh");
+		
+	}
 	if (flag == 0)
 		perror("./hsh");
 	free_function(array_words);
