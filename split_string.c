@@ -90,16 +90,14 @@ void index_function(char *buffer, char **envp)
 
 	e_path = found_path(envp);
 	array_words = split_string(buffer, " \t");
-	if (!(_strcmp(array_words[0], "exit")))
-		flag = exit_function(array_words, buffer);
-	else if (array_words[0] == NULL)
+	if (array_words[0] == NULL)
 		perror("./hsh");
+	else if (!(_strcmp(array_words[0], "exit")))
+		flag = exit_function(array_words, buffer);
 	else if (!(_strcmp(array_words[0], "env")))
 		print_env(envp);
 	if (array_words[0][0] != '/')
-	{
 		flag = check_in_path(array_words, e_path);
-	}
 	if (flag == 0)
 	{
 		if (stat(array_words[0], &find_command) == 0)
