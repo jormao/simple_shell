@@ -168,7 +168,7 @@ int exit_function(char **array_words, char *buffer)
 		exit(0);
 	}
 	arg_exit = _atoi(array_words[1]);
-	if (arg_exit != 0)
+	if (arg_exit > 0 && arg_exit <= 255)
 	{
 		free_function(array_words);
 		free(buffer);
