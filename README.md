@@ -73,7 +73,7 @@ drwxr-xr-x 2 root root 4096 apr  6 22:19 file3
 root@kali:~# cd ejemplos/carpeta2
 root@kali:~/ejemplos/carpeta2# pwd
 /root/ejemplos/carpeta2
- 
+
 
 ## CONTRIBUTORS
 

@@ -113,7 +113,7 @@ void index_function(char *buffer, char **envp)
 			_fork(array_words, envp);
 		else
 			perror("./hsh");
-		
+
 	}
 	if (flag == 0)
 		perror("./hsh");
