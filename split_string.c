@@ -158,7 +158,8 @@ int _atoi(char *s)
 
 int exit_function(char **array_words, char *buffer)
 {
-	int arg_exit = 0, len_exit = 0, flag = 0;
+	unsigned int arg_exit = 0;
+	int len_exit = 0, flag = 0;
 
 	if (array_words[1] == NULL || (!_strcmp(array_words[1], "0")))
 	{
