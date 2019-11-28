@@ -91,7 +91,7 @@ void index_function(char *buffer, char **envp)
 	e_path = found_path(envp);
 	array_words = split_string(buffer, " \t");
 	if (array_words[0] == NULL)
-		perror("./hsh");
+	cd 	perror("./hsh");
 	else if (!(_strcmp(array_words[0], "exit")))
 		flag = exit_function(array_words, buffer);
 	else if (!(_strcmp(array_words[0], "env")))
@@ -170,7 +170,7 @@ int exit_function(char **array_words, char *buffer)
 	{
 		free_function(array_words);
 		free(buffer);
-		exit(0);
+		exit(EXIT_SUCCESS);
 	}
 	arg_exit = _atoi(array_words[1]);
 	if (arg_exit > 0)
