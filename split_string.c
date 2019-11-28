@@ -94,6 +94,11 @@ void index_function(char *buffer, char **envp)
 		perror("./hsh");
 	else if (!(_strcmp(array_words[0], "exit")))
 		flag = exit_function(array_words, buffer);
+	else if (!(_strcmp(array_words[0], "env")))
+	{
+		print_env(envp);
+		flag = 2;
+	}
 	if (array_words[0][0] != '/' && flag == 0)
 		flag = check_in_path(array_words, e_path);
 	if (flag == 0)
