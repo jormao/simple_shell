@@ -1,15 +1,17 @@
-.TH SHELL - man Holbi page
+.TH SHELL 1 "27 November 2019" "Simple Shell 1.0" "man page"
 
 .SH NAME
 
 .SB simple shell
-Interprete de comandos.
+Coommand interpreted.
 
 .SH SYNOPSIS
 
-.B #include ".h"
+.B #include "my_shell.h"
 
-.B OJO PENDIENTE PROTOTIPO
+.B ./hsh
+
+.B [command] [Options]
 
 .SH DESCRIPTION
 
@@ -30,7 +32,7 @@ The command name is passed as an argument.
 .B Command ls
 Lists files and folders in the current directory
 
-.b Parameters
+.B Parameters
 -l, -a, -A, -F, -h, -i, -S, -r, -R, -t, -u, -x, -i.
 
 .SH EXAMPLE
@@ -56,8 +58,8 @@ cd /home/pepepe/Desktop changes to the working directory /home/pepe/Desktop
 cd - changes to the previous working directory (the one in the OLDPWD variable).
 
 .SH EXAMPLE
-root@kali:~# cd ejemplos/carpeta2
-root@kali:~/ejemplos/carpeta2# pwd
+($) cd ejemplos/carpeta2
+($) ~/ejemplos/carpeta2# pwd
 /root/ejemplos/carpeta2
 
 .B Command mv
@@ -67,26 +69,26 @@ Parameters
 Interactive mode indicates that you wait for confirmation if there are files in the destination that can be overwritten.
 
 .SH EXAMPLE
-mv Solvetic1.docx Solvetic2.docx
+mv proof.txt proof2.txt
 
 .B Command rm
 Deletes each file specified on the command line.
 
 .SH EXAMPLE
-rm myfile.txt
-rm -f myfile.txt
+rm proof.txt
+rm -f proof.txt
 
 .B Command mkdir
 Creates a new directory.
 
 .SH EXAMPLE
-mkdir newDir
+mkdir Directory
 
 .B Command rmdir
 Delete a directory.
 
 .SH EXAMPLE
-rmdir newDir/
+rmdir Directory/
 
 .B Command chown
 Changes the owner of the file or directory.
@@ -101,14 +103,14 @@ Parameters
 The mode consists of 3 parts. owner, groups, and others this refers to the permissions for these modes and you must specify them.
 
 .SH EXAMPLE
-chmod a=rwx file.txt
+chmod a=rwx proof.txt
 Assign all permissions to all users for the file file.txt.
 
 .B Command cat
 Displays the contents of a file on the screen without limits.
 
 .SH EXAMPLE
-cat > filename.txt
+cat > proof.txt
 
 .B Command grep
 Searches for a string in the specified files and shows which lines contain the specified string.
