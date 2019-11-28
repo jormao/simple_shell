@@ -79,12 +79,10 @@ The command is a sequence of words or tokens separated by delimiters. The first 
 of the command to be executed. The remaining words are passed as arguments to the summoned command.
 The command name is passed as an argument.
 
-## Example
+## Example ls -l
 
-### ls -l
-
-	```
-	($) ls -l
+```
+($) ls -l
 total 121
 -rwxrwxrwx 1 vagrant vagrant   208 Nov 27 15:24 AUTHORS
 -rwxrwxrwx 1 vagrant vagrant  1539 Nov 27 19:04 fork_out.c
@@ -99,9 +97,7 @@ total 121
 ($)
 ```
 
-## Example
-
-### pwd
+## Example pwd
 
 ```
 ($) pwd
@@ -109,9 +105,7 @@ total 121
 ($)
 ```
 
-## Example
-
-### echo
+## Example echo
 
 ```
 ($) echo hello world
