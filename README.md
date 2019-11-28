@@ -4,6 +4,29 @@
 
 The shell is a program that presents a command line interface that allows you to control your computer using commands entered with a keyboard.
 
+This shell is built as the final project of the study done at Holberton School on programming language c.
+
+The behavior of our Shell is identical to that of sh. 
+
+## Installation
+
+You can install the simple shell cloning this repository:
+
+```
+https://github.com/jormao/simple_shell
+```
+Compile this files with this command:
+
+```
+$ gcc -Wall -Werror -Westra -pedantic -ggdb3 *.c -o hsh
+```
+
+Finally you can run our shell writing:
+
+```
+./hsh
+```
+
 ## Libraries
 
 #include <stdio.h>
@@ -45,35 +68,49 @@ In addition to commands, shells offer other elements to improve their functional
 
 ## how to use it
 
-The command is a sequence of words or tokens
-separated by delimiters. The first word
-specifies the name
+The command is a sequence of words or tokens separated by delimiters. The first word specifies the name
 of the command to be executed. The remaining words are passed as arguments to the summoned command.
 The command name is passed as an argument.
 
 ## Example
 
-	#!/bin/bash
-	to_print='Hello world'
-	echo $to_print
-	to_print=5.5
-	echo $to_print
+### ls -l
+
+	```
+	($) ls -l
+total 121
+-rwxrwxrwx 1 vagrant vagrant   208 Nov 27 15:24 AUTHORS
+-rwxrwxrwx 1 vagrant vagrant  1539 Nov 27 19:04 fork_out.c
+-rwxrwxrwx 1 vagrant vagrant  2076 Nov 26 15:43 functions.c
+-rwxrwxrwx 1 vagrant vagrant 85805 Nov 28 00:45 hsh
+-rwxrwxrwx 1 vagrant vagrant  5920 Nov 26 17:14 man_1_simple_shell
+-rwxrwxrwx 1 vagrant vagrant  1446 Nov 26 16:12 more_functions.c
+-rwxrwxrwx 1 vagrant vagrant  1005 Nov 26 21:12 my_shell.h
+-rwxrwxrwx 1 vagrant vagrant   749 Nov 27 19:00 prompt.c
+-rwxrwxrwx 1 vagrant vagrant  2178 Nov 27 15:24 README.md
+-rwxrwxrwx 1 vagrant vagrant  3530 Nov 28 00:45 split_string.c
+($)
+```
 
 ## Example
 
-## ls -l
+### pwd
 
-total 12
--rw-r--r-- 1 root root  100 apr  6 21:19 file.txt
-drwxr-xr-x 3 root root 4096 apr  7 01:44 file2
-drwxr-xr-x 2 root root 4096 apr  6 22:19 file3
+```
+($) pwd
+/home/vagrant/simple_shell
+($)
+```
 
 ## Example
 
-root@kali:~# cd ejemplos/carpeta2
-root@kali:~/ejemplos/carpeta2# pwd
-/root/ejemplos/carpeta2
+### echo
 
+```
+($) echo hello world
+hello world
+($)
+```
 
 ## CONTRIBUTORS
 
