@@ -170,7 +170,7 @@ int exit_function(char **array_words, char *buffer)
 	{
 		free_function(array_words);
 		free(buffer);
-		exit(EXIT_SUCCESS);
+		exit(0);
 	}
 	arg_exit = _atoi(array_words[1]);
 	if (arg_exit > 0)
